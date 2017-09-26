@@ -2,15 +2,21 @@
 #define MESADERESTAURANTE_H
 
 #include "Pedido.h"
+#define MAX 20
 
 class MesaDeRestaurante{
     private:
-        Pedido *pedidos[];
+        Pedido pedidos[MAX];
+        int num;
+	double valortotal;
     public:
-        MesaDeRestaurante();
-        void adicionAoPedido();
+        MesaDeRestaurante(int num, double valortotal);
+        void adicionarAoPedido();
         void zeraPedidos();
-        void calculaTotal();
+        double calculaTotal();
+
+	Pedido getPedido();
+	int getNum();
 };
 
 
